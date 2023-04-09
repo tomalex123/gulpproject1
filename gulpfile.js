@@ -78,7 +78,7 @@ async function watch() {
         tunnel : false
     })
 
-    gulp.watch("./src/scss/*.scss", styles);
+    gulp.watch("./src/scss/**/*.scss", styles);
     gulp.watch("./src/js/**/*.js", scripts);
     gulp.watch("./src/*.html", htmls);
     gulp.watch("./*.html").on("change", browserSync.reload);
