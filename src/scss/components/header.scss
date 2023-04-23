@@ -10,7 +10,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 100px;
+        
     
         .nav_left {
            img {
@@ -25,19 +25,25 @@ header {
             display: flex;
             align-items: center;
             gap: 64px;
+
             .nav_menu{
-                display: flex;
-                gap: 32px;
+                display: flex;                
                 margin: 0;
+               
+
                 li {
                     list-style-type: none;
                     a {
-                        display: block;
+                        display: flex;
+                        align-items: center;                        
                         text-decoration: none;
                         color: white;
+                        min-height: 100px;
+                        padding: 0px 16px;
+                        transition: $trs;
 
                         &:hover {
-                            text-decoration: underline;
+                            background: $primary;
                         }
                     }
                 }
@@ -58,6 +64,7 @@ header {
             }
         }
         @media screen and (max-width: $mobile) {
+            min-height: 100px;
             .nav_mobile {
                 display: block;
             }
@@ -71,8 +78,7 @@ header {
                 width: 250px;
                 height: 100vh;
                 background: white;
-                gap: 32px;
-                padding: 30px;
+                gap: 32px;                
                 transition: left 0.4s;
 
                 &.active_nav {
@@ -82,19 +88,40 @@ header {
 
                 .nav_menu{
                     flex-direction: column;
-                    gap: 16px;
+                    gap: 0px;
+                    width: 100%;
+                    border-bottom: 0.5px solid #eee;
+
                     li {
                         a {
+                            padding: 0px 30px;
                             color: $darkText;
+                            
+
+                            &:hover {
+                                color: #fff;
+                            }
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
                         }
                     }
                 }
                 .nav_lang{
-                    color: $darkText;
+                    padding: 0px 30px;                    
+                    a {                        
+                        color: $darkText;
+                    }
+                }
+
+                .nav_btn {
+                    padding: 0px 30px; 
+                    width: 100%; 
+
                     a {
-                        display: block;
-                        text-decoration: none;
-                        color: #141414;
+                        width: 100%;
+                        text-align: center;
                     }
                 }
             }
