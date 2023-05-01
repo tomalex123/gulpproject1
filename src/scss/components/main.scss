@@ -35,8 +35,7 @@ main {
                 top: 70px;
                 right: 0;
                 img {
-                    display: block; 
-                                     
+                    display: block;                                      
                 }
 
                 @media screen and (max-width: 1120px){
@@ -68,86 +67,552 @@ main {
     .move_your_way_section {
         background: $lightGrey;
         padding: 64px 0px;
+        .mini_container{
 
-        h2 {
-            margin: 0px 0px 24px 0px;
-        }
-
-        p {
-            font-size: 20px;
-            line-height: 25px;
-            color: $darkText;
-            margin: 0px;
-        }
-    }
-    .move_your_way_items {
-        display: flex;
-        justify-content: center;
-        // flex-wrap: wrap;        
-        gap: 16px;
-        margin-top: 40px;
-
-        .move_your_way_item {
-            background: $white;
-            padding: 24px;
-            border-radius: 16px;
-
-            .mywi_cover {
-                max-width: 286px;
-                max-height: 227px;
-                overflow: hidden;
-                margin-bottom: 16px;
-                a {
-                    display: block;
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
+            h2 {
+                margin: 0px 0px 24px 0px;
             }
-            .mywi_header {
+    
+            p {
+                font-size: 20px;
+                line-height: 25px;
+                color: $darkText;
+                margin: 0px;
+            }
+            .move_your_way_items {
                 display: flex;
+                justify-content: center;
+                // flex-wrap: wrap;        
                 gap: 16px;
-                justify-content: space-between;
-
-                p {
-                    font-size: 16px;
-                    &.offer {
-                        color: $primary;
-                        background: #F1EEF8;
-                        border-radius: 20px;
-                        padding: 1px 10px;
+                margin-top: 40px;
+        
+                .move_your_way_item {
+                    width: 334px;
+                    background: $white;
+                    padding: 24px;
+                    border-radius: 16px;
+                    transition: all $trs;
+        
+                    .mywi_cover {
+                        max-width: 286px;
+                        max-height: 227px;
+                        overflow: hidden;
+                        margin: 0px auto 16px auto;               
+                        a {
+                            display: block;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: all $trs;
+                            }
+                        }
                     }
-                }
-            }
-            .mywi_title_subtitle {
-                margin: 24px 0px;
-                h4 {
-                    margin: 0px 0px 16px 0px;
-                    a {
-                        font-size: min(29px, max(15px + 2vw));
-                        color: $lightText;
-                        text-decoration: none;
+                    .mywi_header {
+                        display: flex;
+                        gap: 16px;
+                        justify-content: space-between;
+        
+                        p {
+                            font-size: 16px;
+                            white-space: nowrap;
+                            &.offer {
+                                color: $primary;
+                                background: #F1EEF8;
+                                border-radius: 20px;
+                                padding: 1px 10px;
+                            }
+                        }
                     }
+                    .mywi_title_subtitle {
+                        margin: 24px 0px;
+                        h4 {
+                            transition: all $trs;
+                            margin: 0px 0px 16px 0px;
+                            a {
+                                font-size: min(29px, max(15px + 2vw));
+                                color: $lightText;
+                                text-decoration: none;
+                            }
+                        }
+        
+                        p {
+                            color: $lightText;
+                        }
+                    }
+                    .mywi_btn {
+                        a {
+                            justify-content: center;
+                            width: 100%;
+                            transform: translateY(0px); 
+                        }
+                    }
+        
+                    &:hover {
+                        box-shadow: 0px 0px 30px #ddcaca;
+        
+                        .mywi_cover {
+                            a {
+                                img {
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+        
+                        .mywi_btn {
+                            a {
+                                transform: translateY(-10px);
+                            }
+                        }
+        
+                        .mywi_title_subtitle {
+                            h4 {                        
+                                transform: translateX(20px);
+        
+                                a{
+                                    color: red !important;
+                                    font-style: italic;
+                                }
+                                
+                            }
+                        }
+        
+        
+                    }
+        
+                }
+                
+                @media screen and (max-width:$tabletM){
+                   flex-wrap: wrap;
+                }
+        
+                @media screen and (max-width:$tablet){
+                    .move_your_way_item {
+                        width: 100%;
+                    }
+        
+                    .mywi_header {
+                        justify-content: center;
+                    }
+        
+                    .mywi_title_subtitle {
+                        text-align: center;
+                    }
+                 }
+        
+                 @media screen and (max-width:480px){
+                    .move_your_way_item {
+                        width: 100%;
+                    }
+        
+                    .mywi_header {
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+        
+                    .mywi_title_subtitle {
+                        text-align: center;
+                    }
+                 }
+            }
+        }
+
+    }
+
+    .just_ride_section {
+        background: $lightGrey;
+        padding: 0px 0px 64px 0px;
+        .mini_container{
+            display: flex;
+            gap: 32px;
+            .just_ride_left {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column; 
+                justify-content: space-between;               
+                width: 426px;                
+                h3 {
+                    margin: 0px 0px 26px 0px;
+                    font-weight: 400;
+                    
                 }
 
-                p {
-                    color: $lightText;
+                p{
+                    margin: 0px 0px 39px 0px;
                 }
-            }
-            .mywi_btn {
                 a {
-                    justify-content: center;
+                    display: flex;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding: 12px 25px;
+                    transition: 0.3s;
+                    cursor: wait;
+                    
+                    &:hover {
+                        background: $darkText;
+                        transform: translate(+10px, -10px);
+                        // transform: skewX(-30deg);
+                        transition: 0.3s;
+                        color: red;
+                        font-weight: bolder;
+                        text-transform: uppercase;
+
+                        svg {
+                            path{
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    
+                }
+            }
+
+            .just_ride_right {
+                width: 586px;
+                height: 378px;
+                overflow: hidden;
+
+                img {
+                    display: block;                    
+                    width: 100%;    
+                    height: 100%;                                
+                }
+            }
+
+            @media screen and (max-width: $tabletM) {
+                flex-wrap: wrap;                
+
+                .just_ride_left{
+                    align-items: center;
+                    text-align: center;
                     width: 100%;
                 }
+
+                .just_ride_right {
+                    margin: 0 auto; 
+                    height: unset;
+
+                    img {
+                        height: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .cities_list_section {
+        display: flex;        
+        align-items: center;
+        background-image: url(../../img/big-banner.jpg);
+        background-size: cover;
+        background-position: center center;
+        min-height: 715px;
+        padding: 64px 0px;
+        
+        .container {
+            display: flex;            
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+
+            .cities_list_left {
+                h3, p {
+                    text-shadow: 1px 1px 6px #000;
+                }
+               h3 {
+                color: #fff;
+                font-size: min(65px, max(32.5px + 2vw));
+                font-weight: 400;
+                margin: 0px 0px 16px 0px;
+               }
+
+               p {
+                color: #fff;
+                font-size: 21px;
+                font-weight: 400;
+                line-height: 25px;
+                margin: 0;
+               }
+
+               a {
+                margin: 32px 0px;
+                cursor: not-allowed;
+               }
             }
 
+            .cities_list_right {
+                h5 {
+                    font-size: min(100px, max(50px + 2vw)); 
+                    margin: 0px 0px 16px 0px;
+                    color: #fff;
+                    font-weight: 400;
+                    letter-spacing: 5px;
+                    text-align: right;
+                    text-shadow: 1px 1px 3px #000;
+                    
+                }
+            }
+
+            @media screen and (max-width: $tabletM){
+                flex-wrap: wrap;
+
+                .cities_list_left {
+                    margin-bottom: 48px;
+
+                    a {
+                        margin: 32px auto;
+                    }
+                }
+
+                .cities_list_right,
+                 .cities_list_left {
+                    width: 100%;
+                    text-align: center;
+
+                    h5 {
+                        text-align: center;
+                    }
+                }
+
+            }
         }
-        
-        @media screen and (max-width:$tablet){
-            flex-wrap: wrap;
+
+    }
+    .youre_in_charge_section {
+        padding:64px 0px;
+        .mini_container {
+            display: flex;
+            gap: 32px;
+            .yicc_left {
+                max-width: 282px;
+                h3 {
+                    margin: 0px 0px 26px 0px;
+                    font-weight: 400;
+                }
+
+                p {
+                    margin: 0px 0px 36px 0px;
+                    max-width: 252px;
+                    font-size: 21px;
+                    line-height: 25px;
+                }
+
+                .checks{
+                 
+                    .checks_item {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        background: $lightGrey;
+                        margin-bottom: 16px;
+                        padding: 8px 16px;
+                        border-radius: 40px;            
+                                                               
+                      
+                     
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .yicc_right {
+                .yicc_right_items {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 24px;
+                    .yicc_right_item {
+                        background: $lightGrey;
+                        width: 334px;                        
+                        padding:32px;
+                        border-radius: 16px;
+                        transition: all $trs;
+                        cursor: all-scroll;
+
+                        &:hover {
+                            box-shadow: 0px 0px 30px #ddcaca;
+            
+                            .yicc_right_item_cover {
+                                a {
+                                    img {
+                                        transform: scale(1.2);
+                                        transition: all $trs;
+                                    }
+                                }
+                            }
+            
+                            .yicc_right_item_btn {
+                                a {
+                                    transition: all $trs;
+                                    &:hover {
+                                        background: $darkText;                                        
+                                        transform: skewX(-30deg);
+                                        transition: 0.3s;
+                                        color: red;
+                                        font-weight: bolder;
+                                        text-transform: uppercase;                
+                                        
+                                    }
+                                }
+                            }
+            
+                            .yicc_right_item_title_and_subtitle {
+                                h4 {        
+                                    transition: all $trs;                
+                                    transform: translateX(20px);            
+                                    a{
+                                        color: red !important;
+                                        font-style: italic;
+                                        text-shadow: 1px 1px 3px #000;
+                                        font-weight: bolder;                                        
+                                    }
+                                    
+                                }
+                            }            
+            
+                        }
+
+                        .yicc_right_item_cover {                            
+                           a {
+                            display: block;
+                            max-width: 286px;
+                            max-height: 286px;
+                            overflow: hidden;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                transition: all $trs;
+                            }
+                            
+
+                           }
+                        }
+                        .yicc_right_item-price_and_cat {
+                            display: flex;
+                            justify-content: space-between;
+                            p {
+                                margin: 0;
+                                &.price {
+                                    color: $lightText;
+                                }
+
+                                &.offer {
+                                    color: $primary;
+                                    font-size: 16px;
+                                    white-space: nowrap;                
+                                    background: $white;
+                                    border-radius: 20px;
+                                    padding: 1px 10px;
+                                }
+                                
+                            }
+                        }
+
+                        .yicc_right_item_title_and_subtitle {
+                            margin-top: 32px;
+                            margin-bottom: 16px;
+                            h4 {
+                                margin: 0;
+                                transition: all $trs;
+                                a {
+                                    text-decoration: none;
+                                    color: $darkText;
+                                    font-size: 27px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    
+                                }
+                            }
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        .yicc_right_item_btn {
+                            transition: all $trs;                           
+                        }
+                    }
+                }
+
+            }
+
+            @media screen and (max-width: $tabletM) {
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .yicc_left {
+                    max-width: unset;
+
+                    p {
+                        max-width: unset;
+                    }
+                }
+            }
+
+            @media screen and (max-width: $mobile) {
+                .yicc_right {
+                    .yicc_right_items {
+                        flex-wrap: wrap;
+
+                        .yicc_right_item {
+                            width: 100%;
+
+                            .yicc_right_item_cover {
+                                a {
+                                    margin: 0 auto;
+                                }
+                            }
+
+                            .yicc_right_item-price_and_cat{
+                                text-align: center;
+                                
+                            }
+
+                            .yicc_right_item_title_and_subtitle {
+                                h4, p {
+                                    margin: 0 auto;
+                                    text-align: center;                               
+
+                                }
+                                
+                            }
+
+                            .yicc_right_item_btn {
+                                a {
+                                    margin: 0 auto;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                
+                }
+            }  
+            @media screen and (max-width: 480px) {
+                .yicc_right {
+                    .yicc_right_items {
+                        .yicc_right_item {
+                            
+                            .yicc_right_item-price_and_cat {
+                                flex-direction: column;
+                                gap: 8px;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

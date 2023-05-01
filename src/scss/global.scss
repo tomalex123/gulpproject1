@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .container{
-    max-width: 1280px;    
+  max-width: 1280px;    
 }
 
 .mini_container {
@@ -13,67 +13,79 @@
   margin: 0 auto;
 }
 
-.primaryBtn {
+.primaryBtn, .secondaryBtn  {
   padding: 8px 16px;
 }
 
-.primaryBtnBig {
+.primaryBtnBig, .secondaryBtnBig {
   padding: 16px 48px;
 }
 
-.primaryBtn, .primaryBtnBig {
-    display: block;
-    text-decoration: none;
-    background: $primary;
-    font-size: 15px;
-    color: #fff;
-    letter-spacing: 0.2px;    
-    width: fit-content;
-    border-radius: $br;
-    transition: $trs;
+.primaryBtn,
+.primaryBtnBig,
+.secondaryBtn,
+.secondaryBtnBig {
+  width: fit-content;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.2px; 
+  border-radius: $br;
+  transition: $trs;
+  cursor: pointer;  
+}
 
-    &:hover {
+
+.primaryBtn, .primaryBtnBig {
+    display: block;    
+    background: $primary;    
+    color: #fff;       
+    
+    &:hover {      
       background: $primaryHover;
       box-shadow: 0px 0px 10px $primaryHover;
     }
 }
 
-.secondaryBtn {
-  padding: 8px 16px;
-}
-
-.secondaryBtnBig {
-  padding: 16px 48px;
-}
-
 .secondaryBtn, .secondaryBtnBig {
   display: flex;
   align-items: center;
-  gap: 4px;
-  text-decoration: none;
+  gap: 4px;  
   background: transparent;
   border: 1px solid $darkText;
   color: $darkText;
-  font-size: 15px;
-  cursor: pointer;
-  letter-spacing: 0.2px;    
-  width: fit-content;
-  border-radius: $br;
-  transition: $trs;
+  position: relative;
+  overflow: hidden;
 
-    &:hover {
-      background: $darkText;
-      box-shadow: 0px 0px 10px $darkText;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: $darkText;
+    transition: all $trs;
+    z-index: -1;    
+  }
+ 
+    &:hover {     
+      box-shadow: 0px 0px 3px $darkText;
       color: #fff;
       transition: $trs;
 
+      &::before {
+        width: 100%;        
+      }
+
       svg {
+        transition: transform $trs;
+        transform: translateX(20px);
         path {
           fill: #fff;
           transition: $trs;
         }
       }
-    }
+   }
 }
 
 .light_text_title{ 
@@ -84,19 +96,21 @@
   color: $darkText;
 }
 
-.light_text_title, .dark_text_title {
+.light_text_title, 
+.dark_text_title {
   font-weight: 400;
   font-size: min(67px, max(33.5px + 2vw));
 
-  @media screen and (max-width: $mobile){
-    margin: 0px 0px 48px 0px !important;
+  @media screen and (max-width: $tabletM){
+    margin: 0px 0px 24px 0px !important;
     text-align: center;    
   }
 }
 
 .subtitle {
-  @media screen and (max-width: $mobile){
-    text-align: center;    
+  @media screen and (max-width: $tabletM){
+    text-align: center;   
+    margin: 0px 0px 24px 0px !important;
   }
 }
 

@@ -80,6 +80,7 @@ header {
                 background: white;
                 gap: 32px;                
                 transition: left 0.4s;
+                z-index: 111;
 
                 &.active_nav {
                     transition: left 0.4s;
