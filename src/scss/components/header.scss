@@ -1,8 +1,7 @@
 @import "../variables.scss";
 
 header {
-    min-height: 800px;
-    background-image: url(../../img/header-bg.jpg);
+    min-height: 800px;    
     background-repeat: no-repeat;
 	background-size: cover;
     
@@ -14,7 +13,7 @@ header {
     
         .nav_left {
            img {
-            display: block;
+            display: block;            
            }
         }
         .nav_mobile {
@@ -141,6 +140,7 @@ header {
             color: #fff;
             font-weight: normal;
             margin: 0;
+            filter: drop-shadow(3px 3px 3px #000);
         }
 
         p {

@@ -6,6 +6,7 @@ main {
             h2 {
                 width: 100%;
                 margin: 0px 0px 70px 0px;
+                filter: drop-shadow(3px 3px 3px #000);
             }
 
             .how_its_work_list {
@@ -71,6 +72,7 @@ main {
 
             h2 {
                 margin: 0px 0px 24px 0px;
+                filter: drop-shadow(3px 3px 4px #000);
             }
     
             p {
@@ -237,6 +239,7 @@ main {
                 h3 {
                     margin: 0px 0px 26px 0px;
                     font-weight: 400;
+                    filter: drop-shadow(3px 3px 3px #000);
                     
                 }
 
@@ -385,18 +388,20 @@ main {
     }
     .youre_in_charge_section {
         padding:64px 0px;
-        .mini_container {
+        .container {
             display: flex;
+            justify-content: space-between;
             gap: 32px;
             .yicc_left {
                 max-width: 282px;
                 h3 {
-                    margin: 0px 0px 26px 0px;
+                    margin: 0px;
                     font-weight: 400;
+                    filter: drop-shadow(3px 3px 3px #000);
                 }
 
                 p {
-                    margin: 0px 0px 36px 0px;
+                    margin: 24px 0px;
                     max-width: 252px;
                     font-size: 21px;
                     line-height: 25px;
@@ -411,11 +416,8 @@ main {
                         background: $lightGrey;
                         margin-bottom: 16px;
                         padding: 8px 16px;
-                        border-radius: 40px;            
-                                                               
+                        border-radius: 40px;  
                       
-                     
-
                         &:last-child {
                             margin-bottom: 0;
                         }
@@ -428,10 +430,11 @@ main {
                     display: flex;
                     justify-content: space-between;
                     gap: 24px;
+                    
                     .yicc_right_item {
                         background: $lightGrey;
                         width: 334px;                        
-                        padding:32px;
+                        padding:67px 32px 32px 32px;
                         border-radius: 16px;
                         transition: all $trs;
                         cursor: all-scroll;
@@ -459,7 +462,7 @@ main {
                                         font-weight: bolder;
                                         text-transform: uppercase;                
                                         
-                                    }
+                                    }                                    
                                 }
                             }
             
@@ -560,6 +563,13 @@ main {
             }
 
             @media screen and (max-width: $mobile) {
+                .yicc_left {
+                    .checks {
+                        .checks_item {
+                            justify-content: center;
+                        }
+                    }
+                }
                 .yicc_right {
                     .yicc_right_items {
                         flex-wrap: wrap;
@@ -614,5 +624,168 @@ main {
             }
 
         }
+    }
+    .learn_more_section {
+        display: flex;
+        align-items: center;
+        min-height: 640px;
+        background: $lightGrey;
+        .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;    
+            .lms_left {
+                width: 240px;
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 54px;
+                    filter: drop-shadow(3px 3px 3px #000);
+
+                    @media screen and (max-width: $tabletM) {
+                        text-align: unset;
+                    }
+                }
+
+                a {
+                    display: block;
+                    display: flex;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    line-height: 16px;
+                    padding: 12px 25px;
+                    transition: 0.3s;
+                    cursor:help;
+
+                    &:hover {
+                        background: $darkText;
+                        transform: translate(+10px, -10px);                        
+                        transition: 0.3s;
+                        color: red;
+                        font-weight: bolder;
+                        text-transform: uppercase;
+
+                        svg {
+                            path{
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .lms_right {
+                .lms_item_wrapper {
+                    margin-bottom: 45px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    .lms_item_wrapper_trigger {
+                        display: flex;
+                        align-items: center;
+                        gap: 28px;
+                        cursor: pointer;
+
+                        svg {
+                            transition: $trs;
+                        }
+    
+                        p {
+                            margin: 0;
+                            color: $darkText;
+                            font-size: min(16px, max(8px + 2vw));
+                            word-wrap: break-word;
+                            // word-break: break-all;
+                        }
+                    }
+    
+                    .lms_item_wrapper_content {
+                        display: none;
+                        max-width: 600px;
+                    }
+                }
+            } 
+            
+            @media screen and (max-width: $mobile) {
+                flex-wrap: wrap;
+
+                .lms_left{
+                    width: 100%;
+
+                    h3 {
+                        text-align: center;
+                    }
+
+                    a {
+                        margin: 0 auto;
+                    }
+                }
+
+                .lms_right {
+                    width: 100%;
+                    margin-top: 32px;
+                    text-align: center;
+
+                    .lms_item_wrapper {
+                        .lms_item_wrapper_trigger {
+                            justify-content: center;
+                        }
+
+                        .lms_item_wrapper_content {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    .review_section {
+        padding: 64px 0px;
+
+        .container{
+            h3 {
+               filter: drop-shadow(3px 3px 5px #000);
+            }
+            .reviews_items{
+                display: flex;
+                justify-content: space-between;
+                gap: 32px;
+                .reviews_item {
+                    max-width: 250px;
+                    
+                    P {
+                        color: $lightText;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: min(29px, max(14px + 2vw));
+                        line-height: 29px;
+                        margin: 0px 0px 16px 0px;
+                    }
+
+                    h6 {
+                        color: $lightText;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: min(17px, max(8px + 2vw));
+                        line-height: 24px;
+                        margin: 0px 0px 16px 0px;
+                        // text-shadow: 0px 0px 1px black;
+                        filter: drop-shadow(3px 3px 5px #000);
+                    }
+                }
+
+                @media screen and (max-width: $mobile) {
+                    flex-wrap: wrap;    
+                    justify-content: center;               
+
+                    .reviews_item {
+                        max-width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        
     }
 }

@@ -31,7 +31,8 @@
   letter-spacing: 0.2px; 
   border-radius: $br;
   transition: $trs;
-  cursor: pointer;  
+  cursor: pointer; 
+  line-height: 16px; 
 }
 
 
@@ -67,13 +68,17 @@
     transition: all $trs;
     z-index: -1;    
   }
- 
+    svg {
+      transition: transform $trs;
+    }
+
     &:hover {     
       box-shadow: 0px 0px 3px $darkText;
       color: #fff;
-      transition: $trs;
+      transition: all $trs;
 
       &::before {
+        transition: all $trs;
         width: 100%;        
       }
 
@@ -82,7 +87,7 @@
         transform: translateX(20px);
         path {
           fill: #fff;
-          transition: $trs;
+          transition: all $trs;
         }
       }
    }

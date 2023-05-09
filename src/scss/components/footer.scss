@@ -1,0 +1,115 @@
+@import "../variables.scss";
+
+footer {
+  min-height: 436px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 64px 0px;
+  position: relative;
+
+  .footer-secondary {
+    position: absolute;
+    right: 40px;
+    bottom: 25px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    
+
+    .footer_item {
+        max-width: 250px;
+
+        &:nth-child(1) {
+            h4 {
+                color: #FFFFFF;
+                font-size: min(29px, max(14.5px + 2vw));
+                margin: 0;
+                font-weight: normal;
+                margin-bottom: 18px;
+            }
+
+            p {
+                color: #FFFFFF;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                margin: 0px;
+
+                &:last-child {
+                    font-size: 14px;
+                    line-height: 21px;
+                }
+            }
+
+            form {
+                margin: 24px 0px;
+                position: relative;
+
+                input {
+                    background: #FFFFFF;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 14px 32px;
+                    outline: none;                   
+                    
+                }
+
+                button {
+                    background: none;
+                    border: none;
+                    position: absolute;
+                    top: 13px;
+                    right: 10px;
+                    cursor: pointer;                    
+                }
+            }
+
+        }
+
+        h6 {
+            color: #FFFFFF;
+            opacity: 50%;
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin: 0px 0px 8px 0px;
+        }
+
+        ul {
+            li {
+                list-style-type:none;
+
+                a {
+                    display: block;
+                    margin-bottom: 16px;
+                    text-decoration: none;
+                    color: #FFFFFF;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        flex-wrap: wrap;
+        justify-content: center;
+        .footer_item {
+            width: 100%;
+            max-width: unset;
+            text-align: center;
+
+            &:nth-child(1) {
+                width: 250px;
+                margin: 0 auto;
+            }
+        }
+    }
+  }
+}
